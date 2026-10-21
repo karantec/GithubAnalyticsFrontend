@@ -1,8 +1,8 @@
-# 🔍 GitHub Explorer
+#  GitHub Explorer
 
 A full-stack web application that integrates with the **GitHub REST API** to search public repositories, view repository details, and save favourites.
 
-# 🔍 GitHub Explorer
+#  GitHub Explorer
 
 A full-stack web application that integrates with the **GitHub REST API** to search public repositories, view repository details, and save favourites.
 
@@ -11,7 +11,7 @@ A full-stack web application that integrates with the **GitHub REST API** to sea
 
 ---
 
-## 📦 Deliverables
+##  Deliverables
 
 - [x] Complete GitHub source code repository (this repo)
 - [x] Working frontend (`/frontend`) and backend (`/backend`)
@@ -65,7 +65,7 @@ A full-stack web application that integrates with the **GitHub REST API** to sea
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 github-explorer/
@@ -125,8 +125,8 @@ npm run dev
 The API runs on **http://localhost:5000**. On success you will see:
 
 ```
-✅ MongoDB connected: ...
-🚀 Server running on http://localhost:5000
+ MongoDB connected: ...
+ Server running on http://localhost:5000
 ```
 
 ### 3. Frontend
@@ -143,7 +143,7 @@ The app runs on **http://localhost:3000**. In development, Vite proxies `/api` r
 
 ---
 
-## 🔐 Environment Variables
+##  Environment Variables
 
 ### Backend (`backend/.env`)
 
@@ -178,7 +178,7 @@ Without a token GitHub allows 60 requests/hour; with one it allows 5,000/hour.
 - _Local:_ `mongodb://127.0.0.1:27017/github_explorer`
 - _Atlas:_ create a free cluster, add a database user, allow your IP under Network Access, then copy the connection string from **Connect → Drivers**
 
-> ⚠️ Never commit `.env` or share your token. Both `.env` files are git-ignored.
+>  Never commit `.env` or share your token. Both `.env` files are git-ignored.
 
 ---
 
@@ -268,7 +268,7 @@ MIT
 
 ---
 
-## 📦 Deliverables
+##  Deliverables
 
 - [x] Complete GitHub source code repository (this repo)
 - [x] Working frontend (`/frontend`) and backend (`/backend`)
@@ -279,7 +279,7 @@ MIT
 
 ---
 
-## ✨ Features
+##  Features
 
 **Repository search**
 
@@ -322,7 +322,7 @@ MIT
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 github-explorer/
@@ -382,8 +382,8 @@ npm run dev
 The API runs on **http://localhost:5000**. On success you will see:
 
 ```
-✅ MongoDB connected: ...
-🚀 Server running on http://localhost:5000
+ MongoDB connected: ...
+ Server running on http://localhost:5000
 ```
 
 ### 3. Frontend
@@ -400,7 +400,7 @@ The app runs on **http://localhost:3000**. In development, Vite proxies `/api` r
 
 ---
 
-## 🔐 Environment Variables
+##  Environment Variables
 
 ### Backend (`backend/.env`)
 
@@ -492,7 +492,7 @@ Additional safeguards: input validation on all query and body fields, a central 
 
 ---
 
-## ✅ Manual Testing Checklist
+##  Manual Testing Checklist
 
 1. Search `react`, then change sorting and pages
 2. Search the same term again within 5 minutes and check `"cached": true` in the Network tab
@@ -506,7 +506,7 @@ Additional safeguards: input validation on all query and body fields, a central 
 
 ---
 
-## ☁️ Deployment
+##  Deployment
 
 | Part     | Suggested host          | Notes                                                                                                                       |
 | -------- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------- |
