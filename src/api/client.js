@@ -16,9 +16,16 @@ export const getUserId = () => {
   }
 };
 
+// Works whether VITE_API_URL is empty (dev proxy), the bare backend host,
+// or the host with /api already on the end.
+const raw = import.meta.env.VITE_API_URL || "";
+const baseURL = raw
+  ? raw.replace(/\/+$/, "").replace(/\/api$/, "") + "/api"
+  : "/api";
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "/api",
-  timeout: 15000,
+  baseURL,
+  timeout: 30000, // Render free tier can take ~30s to wake up
 });
 
 api.interceptors.request.use((cfg) => {
@@ -36,7 +43,8 @@ export const getErrorMessage = (err) => {
     }
     return msg;
   }
-  if (err.code === "ECONNABORTED") return "Request timed out. Please try again.";
+  if (err.code === "ECONNABORTED")
+    return "Request timed out. Please try again.";
   return "Cannot reach the server. Is the backend running?";
 };
 
@@ -47,5 +55,7 @@ export const getRepoDetails = (owner, repo, signal) =>
   api.get(`/repos/${owner}/${repo}`, { signal }).then((r) => r.data);
 
 export const getFavorites = () => api.get("/favorites").then((r) => r.data);
-export const addFavorite = (payload) => api.post("/favorites", payload).then((r) => r.data);
-export const removeFavorite = (repoId) => api.delete(`/favorites/${repoId}`).then((r) => r.data);
+export const addFavorite = (payload) =>
+  api.post("/favorites", payload).then((r) => r.data);
+export const removeFavorite = (repoId) =>
+  api.delete(`/favorites/${repoId}`).then((r) => r.data);
